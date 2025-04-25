@@ -20,7 +20,7 @@ def carregar_dados_azure():
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
     blob_client = blob_service_client.get_container_client(container_name).get_blob_client(blob_name)
     blob_data = blob_client.download_blob().readall()
-    return pd.read_csv(StringIO(blob_data.decode("utf-8")), sep=",", encoding="utf-8", low_memory=False)
+    return pd.read_csv(StringIO(blob_data.decode("utf-8")), sep=",", encoding="utf-8", low_memory=False, skiprows=4)
 
 try:
     df = carregar_dados_azure()
