@@ -11,8 +11,8 @@ st.title("📊 Painel de Autos de Infração - IBAMA")
 # ==============================
 
 connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-container_name = "gold/relatorio_acidentes_ambientais.csv"
-blob_name = "relatorio_acidentes_ambientais.csv"  # ou "relatorio_estatistico_embargos.csv"
+container_name = "dadosibama"
+blob_name = "gold/relatorio_acidentes_ambientais.csv"   # ou "relatorio_estatistico_embargos.csv"
 
 
 @st.cache_data
