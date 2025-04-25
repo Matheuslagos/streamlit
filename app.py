@@ -3,14 +3,12 @@ import pandas as pd
 import plotly.express as px
 from azure.storage.blob import BlobServiceClient
 from io import StringIO
-
+import os
 st.title("📊 Painel de Autos de Infração - IBAMA")
 
 # ==============================
 # 🔐 Configurações do Azure Blob
 # ==============================
-from azure.storage.blob import BlobServiceClient
-import os
 
 connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 container_name = "gold"
