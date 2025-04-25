@@ -9,9 +9,10 @@ st.title("📊 Painel de Autos de Infração - IBAMA")
 # ==============================
 # 🔐 Configurações do Azure Blob
 # ==============================
+from azure.storage.blob import BlobServiceClient
+import os
 
-# Substitua abaixo com suas credenciais reais do Azure
-connect_str = "DefaultEndpointsProtocol=https;AccountName=blobmatheus;AccountKey=8igf4KGRvxMLSBsRwoeT/rFuKlRJnW26wDUep1EB+NH9XAWCHDyUle9lc/t/zdZ572B+jEmo9e2K+AStCCzGPw==;EndpointSuffix=core.windows.net"
+connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 container_name = "gold"
 blob_name = "relatorio_acidentes_ambientais.csv"  # ou "relatorio_estatistico_embargos.csv"
 
