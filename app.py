@@ -17,7 +17,7 @@ blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 containers = blob_service_client.list_containers()
 st.write("Containers disponíveis:")
 for c in containers:
-    st.write("-", c.name)
+    print(st.write("-", c.name))
 @st.cache_data
 def carregar_dados_azure():
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
