@@ -11,13 +11,10 @@ st.title("📊 Painel de Autos de Infração - IBAMA")
 # ==============================
 
 connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-container_name = "gold"
+container_name = "gold/relatorio_acidentes_ambientais.csv"
 blob_name = "relatorio_acidentes_ambientais.csv"  # ou "relatorio_estatistico_embargos.csv"
-blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-containers = blob_service_client.list_containers()
-st.write("Containers disponíveis:")
-for c in containers:
-    print(st.write("-", c.name))
+
+
 @st.cache_data
 def carregar_dados_azure():
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
