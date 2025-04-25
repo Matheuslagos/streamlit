@@ -74,4 +74,4 @@ try:
     st.dataframe(tipo_multa)
 
 except Exception as e:
-    st.error(f"Erro ao carregar os dados do Azure Blob Storage: {e}")
+    st.error(f"Erro ao carregar os dados: {e}")
